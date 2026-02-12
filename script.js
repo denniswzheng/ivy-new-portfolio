@@ -99,6 +99,24 @@ function initPasswordProtection() {
 }
 
 /* ========================================
+   Contact Form (mailto)
+   ======================================== */
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = form.querySelector('#name').value.trim();
+    const email = form.querySelector('#email').value.trim();
+    const message = form.querySelector('#message').value.trim();
+    const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+    window.location.href = `mailto:ivylin12@gmail.com?subject=${subject}&body=${body}`;
+  });
+}
+
+/* ========================================
    Project Card Expand/Collapse
    ======================================== */
 function initProjectToggle() {
@@ -120,6 +138,7 @@ function initProjectToggle() {
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initScrollAnimations();
+  initContactForm();
   initPasswordProtection();
   initProjectToggle();
 });
