@@ -730,11 +730,24 @@ section {
   margin: 0 auto;
 }
 
+.company-section {
+  margin-bottom: 3.5rem;
+}
+
+.company-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  color: var(--color-brown);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--color-sage);
+  display: inline-block;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 2rem;
-  padding-bottom: 5rem;
 }
 
 .project-card {
